@@ -25,7 +25,7 @@ void loop() {
     analogWrite(ledPin, x);
 
     delay (25);
-  }
+}
 }
 ### Reflection 
 This was a one of the harder assignments this year due to forgetting how to do Aurduino code. At first it was alright but then I had to make it gradullay increase and decrease, I had the code down I was just not putting the wire in the right pin that could be used with analog write.
