@@ -72,6 +72,6 @@ void loop() {
   }
 }
 #### Wiring
-!(Finite_LED)[images/Finite_LED.PNG]
+![Finite_LED](images/Finite_LED.PNG)
 #### Reflection
 This one was not to hard, except when i wanted to do the Extra spicy part. The extra spicy part had you make one led blink 5 times and another blink 5 times, it really caught me up because i forgot to put >= in the second blink, and because it would get to five but nothing would happen if the counter was five so it waould stop and that got me frustrated till I figured out what I was missing.
