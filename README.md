@@ -35,44 +35,42 @@ This was a one of the harder assignments this year due to forgetting how to do A
 Duplicate your Arduino sketch that blinks an LED on and off.
 Make an LED blink 5 times
 Extra Spicy part: If you are just crushing these assignments and you want a challenge, try something more complex.  Like try to have one LED blink 5 times and then have another one blink 5 times or something like that.
-#### Code
-//sets up the variable counter
-int counter = 0;
+#### Code  
+      int counter = 0;//sets up the variable counter
 
-void setup() {
-  Serial.begin(9600);
-  pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-}
+      void setup() {
+        Serial.begin(9600);
+        pinMode(13, OUTPUT);
+        pinMode(12, OUTPUT);
 
-void loop() {
-  //makes sure that if it reaches ten blink then it will stop
-  if (counter < 10) {
-    if (counter < 5) {
-      counter++;
-      Serial.println(counter);
 
-      digitalWrite(13, HIGH);
+      void loop() {
+      //makes sure that if it reaches ten blink then it will stop
+        if (counter < 10) {
+          if (counter < 5) {
+            counter++;
+            Serial.println(counter);
+            digitalWrite(13, HIGH);
 
-      delay(1000);
+          delay(1000);
 
-      digitalWrite(13, LOW);
+          digitalWrite(13, LOW);
 
-      delay(1000);
-    } else if (counter >= 5) {
-      counter++;
-      Serial.println(counter);//prints out the counter to the serial moniter to show which blink it is on
+          delay(1000);
+        } else if (counter >= 5) {
+          counter++;
+          Serial.println(counter);//prints out the counter to the serial moniter to show which blink it is on
 
-      digitalWrite(12, HIGH);
+          digitalWrite(12, HIGH);
 
-      delay(1000);
+          delay(1000);
 
-      digitalWrite(12, LOW);
+          digitalWrite(12, LOW);
 
-      delay(1000);
+          delay(1000);
+        }
+      }
     }
-  }
-}
 
 #### Wiring
 ![Finite_LED](images/Finite_LED.PNG)
