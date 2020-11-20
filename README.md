@@ -36,6 +36,7 @@ Duplicate your Arduino sketch that blinks an LED on and off.
 Make an LED blink 5 times
 Extra Spicy part: If you are just crushing these assignments and you want a challenge, try something more complex.  Like try to have one LED blink 5 times and then have another one blink 5 times or something like that.
 #### Code
+//sets up the variable counter
 int counter = 0;
 
 void setup() {
@@ -45,6 +46,7 @@ void setup() {
 }
 
 void loop() {
+  //makes sure that if it reaches ten blink then it will stop
   if (counter < 10) {
     if (counter < 5) {
       counter++;
@@ -57,6 +59,7 @@ void loop() {
       digitalWrite(13, LOW);
 
       delay(1000);
+    //if it becomes more than or equal to 5 then it will start to blink the red one
     } else if (counter >= 5) {
       counter++;
       Serial.println(counter);
