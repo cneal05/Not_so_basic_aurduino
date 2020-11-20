@@ -59,10 +59,9 @@ void loop() {
       digitalWrite(13, LOW);
 
       delay(1000);
-    //if it becomes more than or equal to 5 then it will start to blink the red one
     } else if (counter >= 5) {
       counter++;
-      Serial.println(counter);
+      Serial.println(counter);//prints out the counter to the serial moniter to show which blink it is on
 
       digitalWrite(12, HIGH);
 
@@ -74,6 +73,7 @@ void loop() {
     }
   }
 }
+
 #### Wiring
 ![Finite_LED](images/Finite_LED.PNG)
 #### Reflection
