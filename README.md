@@ -76,3 +76,39 @@ Extra Spicy part: If you are just crushing these assignments and you want a chal
 ![Finite_LED](images/Finite_LED.PNG)
 #### Reflection
 This one was not to hard, except when i wanted to do the Extra spicy part. The extra spicy part had you make one led blink 5 times and another blink 5 times, it really caught me up because i forgot to put >= in the second blink, and because it would get to five but nothing would happen if the counter was five so it waould stop and that got me frustrated till I figured out what I was missing.
+
+### Hello Functions
+#### Assignment
+You need a function uses the HC-SR04 to calculate the distance of an object and return that distance in centimeters. You must move the servo based on that distance and the servo motion must happen via function or functions.
+#### Code
+    #include <Servo.h>
+      Servo servo1;
+      int trigPin = 9;
+      int echoPin = 8;
+      long distance;
+      long duration;
+
+      void setup() {
+        servo1.attach(7);
+         pinMode(trigPin, OUTPUT);
+      }
+
+      void loop() {
+        ultra();
+        servo1.write(0);
+        if(distance <= 10){
+        servo1.write(90);
+        }
+      }
+
+      void ultra(){
+        digitalWrite(trigPin, LOW);
+        delayMicroseconds(2);
+        digitalWrite(trigPin, HIGH);
+        delayMicroseconds(10);
+        digitalWrite(trigPin, LOW);
+        duration = pulseIn(echoPin, HIGH);
+        distance = duration*0.034/2;
+        }
+#### Reflection 
+this one was very difficult and i am not sure if i got it fully correct but it does turn the servo when something gets closer to the servo. I really didn't know how to do this one and I had to look it up and I was helped by some website.
