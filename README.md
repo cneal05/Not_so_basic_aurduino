@@ -112,3 +112,40 @@ You need a function uses the HC-SR04 to calculate the distance of an object and 
         }
 #### Reflection 
 this one was very difficult and i am not sure if i got it fully correct but it does turn the servo when something gets closer to the servo. I really didn't know how to do this one and I had to look it up and I was helped by some website.
+
+### NewPing()
+#### Assignment
+Do something cool but relatively simple using the NewPing library. 
+#### Code
+    #include <NewPing.h>
+
+    #define TRIGGER_PIN 12
+    #define ECHO_PIN 11
+    #define MAX_DISTANCE 200
+
+    NewPing myHC_SR04(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
+    void setup() {
+      Serial.begin(9600);
+      pinMode(7, OUTPUT);
+      pinMode(8, OUTPUT);
+    }
+
+    void loop() {
+      Serial.println(myHC_SR04.ping_cm());
+      delay(100);
+      if (myHC_SR04.ping_cm() <= 20) {
+        digitalWrite(7, HIGH);
+        delay(60);
+        digitalWrite(7, LOW);
+        delay(60);
+      } else {
+        digitalWrite(8, HIGH);
+        delay(60);
+        digitalWrite(8, LOW);
+        delay(60);
+      }
+
+    }
+#### Reflection
+i had a lot of fun with this, as it was pretty simple to make it, but also because I learned that I can download a lot of functions that others have made that I can use for my own. I decide for my assignment to make a program that when the HC-SR04 senses something in 20 millimeters, it blink the red LED, versus when it is beyond 20 millimeters it blink the blue LED.
