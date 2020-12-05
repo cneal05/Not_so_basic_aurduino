@@ -149,3 +149,28 @@ Do something cool but relatively simple using the NewPing library.
     }
 #### Reflection
 i had a lot of fun with this, as it was pretty simple to make it, but also because I learned that I can download a lot of functions that others have made that I can use for my own. I decide for my assignment to make a program that when the HC-SR04 senses something in 20 millimeters, it blink the red LED, versus when it is beyond 20 millimeters it blink the blue LED.
+### Photoresistor
+#### Assignment
+Your task is to develop a night light that automatically comes on when it gets dark.
+#### Code
+    int analogPin = A0;
+    int val = 0;
+
+    void setup() {
+      Serial.begin(9600);
+      pinMode(9, OUTPUT);
+    }
+
+    void loop() {
+      val = analogRead(analogPin);
+      Serial.println(val);
+      if(val < 25){
+        digitalWrite(9, HIGH);
+        delay(100);
+      }else{
+        digitalWrite(9, LOW);
+        delay(100);
+      }
+    }
+#### Reflection
+At first I could not do this assignment as I did not have the right resistor, but then I tried it with the resistor I had and everything beyond that point was pretty simple to do.
